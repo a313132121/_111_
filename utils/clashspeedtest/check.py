@@ -9,7 +9,7 @@ def check(alive, proxy, apiurl, sema, timeout, testurl):
         r = requests.get(f"http://127.0.0.1:9090/proxies/{quote(proxy['name'], safe='')}/delay", params={
             'url': testurl,
             'timeout': timeout
-        }, 10)
+        }, timeout=10)
         response = json.loads(r.text)
         print(response)
         if response['delay'] > 0:
