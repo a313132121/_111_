@@ -7,8 +7,13 @@ def check(alive, proxy, apiurl, sema, timeout, testurl):
     try:
         url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl+'&timeout=' + str(timeout)
         #url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl2+'&timeout=' + str(timeout)
-        r = requests.get(url, timeout=10)
+        r = requests.get(f"http://127.0.0.1:9090/proxies/{quote(proxy['name'], safe='')}/delay", params={
+            'url': 'https://i.ytimg.com/generate_204',
+            'timeout': timeout
+        }, timeout=10)
+        #r = requests.get(url, timeout=10)
         response = json.loads(r.text)
+        print('--------')
         print(response)
         if response['delay'] > 0:
             alive.append(proxy)
