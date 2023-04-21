@@ -38,8 +38,9 @@ def test_latency(alive,proxy, timeout=2000):
         
         if response['delay'] > 0:
             alive['proxies'].append(proxy)
+            print(str(response['delay']) + '=====' + proxy[name])
     except Exception as e:
-        print(e)
+        print(e + '----' + proxy[name])
 
 
 
