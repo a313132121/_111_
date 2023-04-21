@@ -7,7 +7,7 @@ def check(alive, proxy, apiurl, sema, timeout, testurl):
         #urllib.parse.quote()   https://blog.csdn.net/weixin_43788986/article/details/125572389
         #quote() 介绍2：https://blog.csdn.net/weixin_43411585/article/details/89067127
         r = requests.get(f"http://127.0.0.1:9090/proxies/{quote(proxy['name'], safe='')}/delay", params={
-            'url': 'https://i.ytimg.com/generate_204',
+            'url': testurl,
             'timeout': timeout
         }, 10)
         response = json.loads(r.text)
