@@ -45,7 +45,8 @@ def init():
                     proxyconfig = yaml.load(reader, Loader=yaml.FullLoader)
             
     # set clash api url
-    baseurl = '127.0.0.1:' + str(api_port)
+    #baseurl = '127.0.0.1:' + str(api_port)
+    baseurl = '127.0.0.1:9090
     apiurl = 'http://'+baseurl
 
     # filter config files
