@@ -25,20 +25,22 @@ def download(url, file, unpack_gzip=False):
             _in = gzip.open(_in)    #解压文件https://www.cnblogs.com/eliwang/p/14591861.html
         shutil.copyfileobj(_in, _out)   #拷贝文件https://zhuanlan.zhihu.com/p/213919757 和 https://www.cnblogs.com/xiangsikai/p/7787101.html
 
-
-def test_latency(name, timeout=2000):
+def test_latency(alive,proxy, timeout=2000):
+    
     try:
         #urllib.parse.quote()   https://blog.csdn.net/weixin_43788986/article/details/125572389
         #quote() 介绍2：https://blog.csdn.net/weixin_43411585/article/details/89067127
-        r = requests.get(f"http://127.0.0.1:9090/proxies/{quote(name, safe='')}/delay", params={
+        r = requests.get(f"http://127.0.0.1:9090/proxies/{quote(proxy['name'], safe='')}/delay", params={
             'url': 'https://i.ytimg.com/generate_204',
             'timeout': timeout
-        }, timeout=10).json()
-        print(response)
+        }, timeout=timeout / 400)
+        response = json.loads(r.text)
+        
+        if response['delay'] > 0:
+            alive['proxies'].append(proxy)
     except Exception as e:
-        r = {'message': str(e)}
-    print(r)
-    return r
+        print(e)
+
 
 
 def test_all_latency(   #latency：潜伏
@@ -72,6 +74,7 @@ def test_all_latency(   #latency：潜伏
             with ThreadPoolExecutor(max_workers) as executor:
                 for i in range(int(len(proxyconfig['proxies']))):
                     executor.submit(test_latency,alive,proxyconfig['proxies'][i])
+                    
 
                 #sorted() 函数对所有可迭代的对象进行排序操作 https://blog.csdn.net/PY0312/article/details/88956795
             alive = yaml.dump(alive, default_flow_style=False, sort_keys=False, allow_unicode=True, width=750, indent=2)
