@@ -26,7 +26,7 @@ def download(url, file, unpack_gzip=False):
         shutil.copyfileobj(_in, _out)   #拷贝文件https://zhuanlan.zhihu.com/p/213919757 和 https://www.cnblogs.com/xiangsikai/p/7787101.html
 
 def test_latency(alive,proxy,timeout=2000):
-    
+    print(proxy)
     try:
         #urllib.parse.quote()   https://blog.csdn.net/weixin_43788986/article/details/125572389
         #quote() 介绍2：https://blog.csdn.net/weixin_43411585/article/details/89067127
