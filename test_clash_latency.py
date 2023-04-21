@@ -31,7 +31,7 @@ def test_latency(name, timeout=2000):
         r = requests.get(f"http://127.0.0.1:9090/proxies/{quote(name, safe='')}/delay", params={
             'url': 'https://i.ytimg.com/generate_204',
             'timeout': timeout
-        }, timeout=timeout / 400).json()
+        }, timeout=10).json()
     except Exception as e:
         r = {'message': str(e)}
     print(r)
