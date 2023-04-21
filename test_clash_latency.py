@@ -1,22 +1,11 @@
-#!/usr/bin/env python3
-
-import gzip      #https://www.cnblogs.com/eliwang/p/14591861.html
-
+import gzip         #https://www.cnblogs.com/eliwang/p/14591861.html
 import os
-
 import shutil   #主要：拷贝文件https://blog.csdn.net/weixin_41261833/article/details/108050152
 import subprocess   #子进程管理 https://zhuanlan.zhihu.com/p/91342640    https://www.runoob.com/w3cnote/python3-subprocess.html
 from concurrent.futures import ThreadPoolExecutor   #线程池 https://zhuanlan.zhihu.com/p/65638744 https://www.jianshu.com/p/6d6e4f745c27
 from urllib.parse import quote  #https://blog.csdn.net/weixin_43788986/article/details/125572389
 
 import requests #python中requests库使用方法详解 https://zhuanlan.zhihu.com/p/137649301  https://www.runoob.com/python3/python-requests.html
-import yaml
-import json
-
-import time
-from multiprocessing import Process, Manager, Semaphore
-#from tqdm import tqdm
-
 
 
 def download(url, file, unpack_gzip=False):
@@ -35,21 +24,18 @@ def download(url, file, unpack_gzip=False):
         shutil.copyfileobj(_in, _out)   #拷贝文件https://zhuanlan.zhihu.com/p/213919757 和 https://www.cnblogs.com/xiangsikai/p/7787101.html
 
 
-def test_latency(alive,proxy, timeout=2000):
-    
+def test_latency(name, timeout=2000):
     try:
         #urllib.parse.quote()   https://blog.csdn.net/weixin_43788986/article/details/125572389
         #quote() 介绍2：https://blog.csdn.net/weixin_43411585/article/details/89067127
-        r = requests.get(f"http://127.0.0.1:9090/proxies/{quote(proxy['name'], safe='')}/delay", params={
+        r = requests.get(f"http://127.0.0.1:9090/proxies/{quote(name, safe='')}/delay", params={
             'url': 'https://i.ytimg.com/generate_204',
             'timeout': timeout
-        }, timeout=timeout / 400)
-        response = json.loads(r.text)
-        if response['delay'] > 0:
-            alive['proxies'].append(proxy)
+        }, timeout=timeout / 400).json()
     except Exception as e:
-        print(e)
-
+        r = {'message': str(e)}
+    print(r)
+    return r
 
 
 def test_all_latency(   #latency：潜伏
@@ -67,62 +53,39 @@ def test_all_latency(   #latency：潜伏
     if config_url and (config_cover or not os.path.exists(config_path)):
         download(config_url, config_path)#下载config.yaml（实际就是节点文件）
     os.chmod(clash_path, 0o755)#os.chmod() 方法用于更改文件或目录的权限。
-    #读取节点
-    """
-    with open(config_path, 'r') as reader:
-        try:
-            proxyconfig = yaml.load(reader, Loader=yaml.FullLoader)
-        except Exception as err:
-            print(err) 
-    alive = {'proxies':[]}
-    clash = subprocess.Popen([clash_path, '-f', config_path, '--ext-ctl', ':9090'])
-    processes =[]
-    sema = Semaphore(max_workers)
-    time.sleep(5)
-    #for i in tqdm(range(int(len(proxyconfig['proxies']))), desc="Testing"):
-    for i in range(int(len(proxyconfig['proxies']))):
-        sema.acquire()
-        print('---'+str(i)+'---\n')
-        p = Process(target=test_latency, args=(alive,proxyconfig['proxies'][i]))
-        p.start()
-        processes.append(p)
-    for p in processes:
-        p.join
-    time.sleep(5)
-    alive = yaml.dump(alive, default_flow_style=False, sort_keys=False, allow_unicode=True, width=750, indent=2)
-    return alive 
-    """
     
     with subprocess.Popen([clash_path, '-f', config_path, '--ext-ctl', ':9090'], stdout=subprocess.PIPE) as popen:
     #subprocess子进程管理 https://zhuanlan.zhihu.com/p/91342640
     #自己推荐看这个 https://www.runoob.com/w3cnote/python3-subprocess.html
     #https://blog.csdn.net/weixin_45314192/article/details/123310026
-        with open(config_path, 'r') as reader:
-            try:
-                proxyconfig = yaml.load(reader, Loader=yaml.FullLoader)
-            except Exception as err:
-                print(err)   
         while b':9090' not in popen.stdout.readline():#为了停止popen.stdout.readline()吗？
             pass    #pass 语句不执行任何操作。语法上需要一个语句，但程序不实际执行任何动作时，可以使用该语句，或者是当站位语句
         try:
+            proxies = requests.get('http://127.0.0.1:9090/proxies').json()['proxies']
+            for k in ('DIRECT', 'REJECT', 'GLOBAL'):
+                del proxies[k]
+            print(proxies)
+            #线程池 https://zhuanlan.zhihu.com/p/65638744 https://www.jianshu.com/p/6d6e4f745c27
+            #threadpoolexecutor.map() https://www.cnblogs.com/rainbow-tan/p/17269543.html
             with ThreadPoolExecutor(max_workers) as executor:
-                for i in range(int(len(proxyconfig['proxies']))):
-                    executor.submit(test_latency,alive,proxyconfig['proxies'][i])
-
+            
+                items = sorted(zip(proxies, executor.map(lambda name: test_latency(name, timeout), proxies)),key=lambda x: (x[1].get('meanDelay') or float('inf'), x[1].get('delay') or float('inf')))
+                return items
+                """
+                return sorted(
+                    zip(proxies, executor.map(lambda name: test_latency(name, timeout), proxies)),
+                    key=lambda x: (x[1].get('meanDelay') or float('inf'), x[1].get('delay') or float('inf'))
+                )
+                """
                 #sorted() 函数对所有可迭代的对象进行排序操作 https://blog.csdn.net/PY0312/article/details/88956795
                 #zip() 函数用于将可迭代的对象作为参数,
                 #map() 会根据提供的函数对指定序列做映射 https://blog.csdn.net/PY0312/article/details/88956795
                 #将lambda函数赋值给一个变量，通过这个变量间接调用该lambda函数 https://blog.csdn.net/PY0312/article/details/88956795
         finally:    #无论try语句中是否抛出异常，finally中的语句一定会被执行https://blog.csdn.net/gyniu/article/details/80345160
             popen.terminate()#Popen.terminate()停止子进程
-        alive = yaml.dump(alive, default_flow_style=False, sort_keys=False, allow_unicode=True, width=750, indent=2)
-        return alive    
-    
+
+
 if __name__ == '__main__':
-    alive = test_all_latency('https://raw.githubusercontent.com/rxsweet/proxies/main/sub/sources/staticAll.yaml', timeout=10000)
-    #alive = test_all_latency('https://raw.githubusercontent.com/zsokami/sub/main/trials_providers/All.yaml', timeout=10000)
-    f = open('xxx.yaml', 'w',encoding="UTF-8")
-    f.write(alive)
-    f.close()
     #for item in test_all_latency('https://raw.githubusercontent.com/zsokami/sub/main/trials_providers/All.yaml', timeout=10000):
-        #print(*item)    #*参数，**参数 https://zhuanlan.zhihu.com/p/89304906  https://blog.csdn.net/cadi2011/article/details/84871401
+    for item in test_all_latency('https://raw.githubusercontent.com/rxsweet/proxies/main/sub/sources/staticAll.yaml', timeout=10000):
+        print(*item)    #*参数，**参数 https://zhuanlan.zhihu.com/p/89304906  https://blog.csdn.net/cadi2011/article/details/84871401
