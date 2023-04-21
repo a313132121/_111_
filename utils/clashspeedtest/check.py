@@ -4,7 +4,7 @@ from urllib.parse import quote  #https://blog.csdn.net/weixin_43788986/article/d
 
 testurl2 = 'https://jable.tv/rss/'
 def check(alive, proxy, apiurl, sema, timeout, testurl):
-    print(proxy['proxies'])
+    print(proxy)
     try:
         url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl+'&timeout=' + str(timeout)
         #url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl2+'&timeout=' + str(timeout)
