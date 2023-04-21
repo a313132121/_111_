@@ -42,15 +42,8 @@ jobs:
         wget -O subconverter.tar.gz https://github.com/tindy2013/subconverter/releases/latest/download/subconverter_linux64.tar.gz
         tar -zxvf subconverter.tar.gz -C ./
         chmod +x ./subconverter/subconverter && nohup ./subconverter/subconverter >./subconverter.log 2>&1 &
-    - name: 安装测速工具-clash
-      run: |
-        wget -O clash-linuxamd64.gz https://github.com/Dreamacro/clash/releases/download/v1.11.8/clash-linux-amd64-v1.11.8.gz
-        gunzip clash-linuxamd64.gz
-        chmod +x ./clash-linuxamd64 && ./clash-linuxamd64 & 
 
-    - name: 执行任务 - 2.测速
-      run: |
-       sudo chmod 777 clash-linuxamd64 && python ./utils/clashspeedtest/main.py
+    - run: sudo python test_clash_latency.py
 
 # 提交           
     - name: 提交更改
