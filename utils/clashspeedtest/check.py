@@ -1,5 +1,6 @@
 import requests
 import json
+from urllib.parse import quote  #https://blog.csdn.net/weixin_43788986/article/details/125572389
 
 testurl2 = 'https://jable.tv/rss/'
 def check(alive, proxy, apiurl, sema, timeout, testurl):
