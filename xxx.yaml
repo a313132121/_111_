@@ -1,1 +1,590 @@
-proxies: []
+proxies:
+- name: 🇺🇸 美国 硅谷104 - 墙了个墙
+  server: svvip101.qlgq1.pw
+  port: 40443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: svvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: svvip101
+  udp: true
+- name: 🇺🇸 美国 凤凰城102 - 墙了个墙
+  server: pxvip101.qlgq1.pw
+  port: 20443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: pxvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: pxvip101
+  udp: true
+- name: 🇺🇸 美国 凤凰城101 - 墙了个墙
+  server: pxvip101.qlgq1.pw
+  port: 10443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: pxvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: pxvip101
+  udp: true
+- name: 🇺🇸 美国 硅谷105 - 墙了个墙
+  server: svvip101.qlgq1.pw
+  port: 50443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: svvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: svvip101
+  udp: true
+- name: 🇺🇸 美国 硅谷101 - 墙了个墙
+  server: svvip101.qlgq1.pw
+  port: 10443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: svvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: svvip101
+  udp: true
+- name: 🇺🇸 美国 硅谷102 - 墙了个墙
+  server: svvip101.qlgq1.pw
+  port: 20443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: svvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: svvip101
+  udp: true
+- name: 🇺🇸 美国 凤凰城103 - 墙了个墙
+  server: pxvip101.qlgq1.pw
+  port: 30443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: pxvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: pxvip101
+  udp: true
+- name: 🇬🇧 英国 102 - 墙了个墙
+  server: ukvip101.qlgq1.pw
+  port: 20443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: ukvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: ukvip101
+  udp: true
+- name: 🇬🇧 英国 105 - 墙了个墙
+  server: ukvip101.qlgq1.pw
+  port: 50443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: ukvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: ukvip101
+  udp: true
+- name: 🇩🇪 德国 法兰克福101 - 墙了个墙
+  server: fkvip101.qlgq1.pw
+  port: 10443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: fkvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: fkvip101
+  udp: true
+- name: 🇬🇧 英国 104 - 墙了个墙
+  server: ukvip101.qlgq1.pw
+  port: 40443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: ukvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: ukvip101
+  udp: true
+- name: 🇬🇧 英国 103 - 墙了个墙
+  server: ukvip101.qlgq1.pw
+  port: 30443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: ukvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: ukvip101
+  udp: true
+- name: 🇬🇧 英国 101 - 墙了个墙
+  server: ukvip101.qlgq1.pw
+  port: 10443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: ukvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: ukvip101
+  udp: true
+- name: 🇩🇪 德国 法兰克福102 - 墙了个墙
+  server: fkvip101.qlgq1.pw
+  port: 20443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: fkvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: fkvip101
+  udp: true
+- name: 🇩🇪 德国 法兰克福104 - 墙了个墙
+  server: fkvip101.qlgq1.pw
+  port: 40443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: fkvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: fkvip101
+  udp: true
+- name: 🇩🇪 德国 法兰克福105 - 墙了个墙
+  server: fkvip101.qlgq1.pw
+  port: 50443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: fkvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: fkvip101
+  udp: true
+- name: 🇩🇪 德国 法兰克福103 - 墙了个墙
+  server: fkvip101.qlgq1.pw
+  port: 30443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: fkvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: fkvip101
+  udp: true
+- name: 🇯🇵 日本 105 - 墙了个墙
+  server: jpvip102.qlgq1.pw
+  port: 50443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: jpvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: jpvip102
+  udp: true
+- name: 🇯🇵 日本 104 - 墙了个墙
+  server: jpvip102.qlgq1.pw
+  port: 40443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: jpvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: jpvip102
+  udp: true
+- name: 🇯🇵 日本 103 - 墙了个墙
+  server: jpvip102.qlgq1.pw
+  port: 30443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: jpvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: jpvip102
+  udp: true
+- name: 🇯🇵 日本 101 - 墙了个墙
+  server: jpvip102.qlgq1.pw
+  port: 10443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: jpvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: jpvip102
+  udp: true
+- name: 🇯🇵 日本 102 - 墙了个墙
+  server: jpvip102.qlgq1.pw
+  port: 20443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: jpvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: jpvip102
+  udp: true
+- name: 🇭🇰 香港 101 - 墙了个墙
+  server: hkvip102.qlgq1.pw
+  port: 10443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: hkvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: hkvip102
+  udp: true
+- name: 🇸🇬 新加坡 103 - 墙了个墙
+  server: sgvip101.qlgq1.pw
+  port: 30443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: sgvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: sgvip101
+  udp: true
+- name: 🇸🇬 新加坡 102 - 墙了个墙
+  server: sgvip101.qlgq1.pw
+  port: 20443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: sgvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: sgvip101
+  udp: true
+- name: 🇸🇬 新加坡 105 - 墙了个墙
+  server: sgvip101.qlgq1.pw
+  port: 50443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: sgvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: sgvip101
+  udp: true
+- name: 🇸🇬 新加坡 104 - 墙了个墙
+  server: sgvip101.qlgq1.pw
+  port: 40443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: sgvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: sgvip101
+  udp: true
+- name: 🇸🇬 新加坡 101 - 墙了个墙
+  server: sgvip101.qlgq1.pw
+  port: 10443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: sgvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: sgvip101
+  udp: true
+- name: 🇭🇰 香港 103 - 墙了个墙
+  server: hkvip102.qlgq1.pw
+  port: 30443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: hkvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: hkvip102
+  udp: true
+- name: 🇭🇰 香港 105 - 墙了个墙
+  server: hkvip102.qlgq1.pw
+  port: 50443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: hkvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: hkvip102
+  udp: true
+- name: 🇭🇰 香港 102 - 墙了个墙
+  server: hkvip102.qlgq1.pw
+  port: 20443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: hkvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: hkvip102
+  udp: true
+- name: 🇭🇰 香港 104 - 墙了个墙
+  server: hkvip102.qlgq1.pw
+  port: 40443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: hkvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: hkvip102
+  udp: true
+- name: 🇺🇸 美国 直连2 - 爱猫论坛
+  server: us2.netflix6.com
+  port: 443
+  type: vmess
+  uuid: b6b95814-aa71-3fff-b175-ee29bd4ec7e4
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /hls/us8.m3u8
+    headers:
+      Host: us2.netflix6.com
+  udp: true
+- name: 🇺🇸 美国 直连3 - 爱猫论坛
+  server: us3.netflix6.com
+  port: 31235
+  type: vmess
+  uuid: b6b95814-aa71-3fff-b175-ee29bd4ec7e4
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /maohk3
+    headers:
+      Host: us3.netflix6.com
+  udp: true
+- name: 🇺🇸 美国 直连4 - 爱猫论坛
+  server: us4.netflix6.com
+  port: 31235
+  type: vmess
+  uuid: b6b95814-aa71-3fff-b175-ee29bd4ec7e4
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /maohk3
+    headers:
+      Host: us4.netflix6.com
+  udp: true
+- name: 🇺🇸 美国 直连1 - 爱猫论坛
+  server: us1.netflix6.com
+  port: 443
+  type: vmess
+  uuid: b6b95814-aa71-3fff-b175-ee29bd4ec7e4
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /hls/us8.m3u8
+    headers:
+      Host: us1.netflix6.com
+  udp: true
+- name: 🇹🇼 台湾 直连1 - 爱猫论坛
+  server: tw2.594888.xyz
+  port: 31235
+  type: vmess
+  uuid: b6b95814-aa71-3fff-b175-ee29bd4ec7e4
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /maohk3
+    headers:
+      Host: tw2.594888.xyz
+  udp: true
+- name: 🇹🇼 台湾 直连3 - 爱猫论坛
+  server: tw4.594888.xyz
+  port: 31235
+  type: vmess
+  uuid: b6b95814-aa71-3fff-b175-ee29bd4ec7e4
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /maohk3
+    headers:
+      Host: tw4.594888.xyz
+  udp: true
+- name: 🇹🇼 台湾 直连2 - 爱猫论坛
+  server: tw3.594888.xyz
+  port: 31235
+  type: vmess
+  uuid: b6b95814-aa71-3fff-b175-ee29bd4ec7e4
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /maohk3
+    headers:
+      Host: tw3.594888.xyz
+  udp: true
+- name: 🇸🇬 新加坡 直连2 - 爱猫论坛
+  server: sg2.netflix6.com
+  port: 443
+  type: vmess
+  uuid: b6b95814-aa71-3fff-b175-ee29bd4ec7e4
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /hls/us8.m3u8
+    headers:
+      Host: sg2.netflix6.com
+  udp: true
+- name: 🇸🇬 新加坡 直连1 - 爱猫论坛
+  server: sg1.netflix6.com
+  port: 443
+  type: vmess
+  uuid: b6b95814-aa71-3fff-b175-ee29bd4ec7e4
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /hls/us8.m3u8
+    headers:
+      Host: sg1.netflix6.com
+  udp: true
+- name: 🇭🇰 香港 直连1 - 爱猫论坛
+  server: hk1.netflix6.com
+  port: 2443
+  type: vmess
+  uuid: b6b95814-aa71-3fff-b175-ee29bd4ec7e4
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /maohk3
+    headers:
+      Host: hk1.netflix6.com
+  udp: true
+- name: 🇵🇭 菲律宾 直连 - 爱猫论坛
+  server: ph1.netflix6.com
+  port: 31235
+  type: vmess
+  uuid: b6b95814-aa71-3fff-b175-ee29bd4ec7e4
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /maohk3
+    headers:
+      Host: ph1.netflix6.com
+  udp: true
+- name: 🇭🇰 香港2 - giao云
+  server: 330sg01.ljydw.top
+  port: 14439
+  type: trojan
+  password: 2b588dab-5240-46a1-974e-7b2fff83edf6
+  sni: 330sg01.ljydw.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 香港3 - giao云
+  server: 330sg02.ljydw.top
+  port: 14433
+  type: trojan
+  password: 2b588dab-5240-46a1-974e-7b2fff83edf6
+  sni: 330sg02.ljydw.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 香港5 - giao云
+  server: 330hk01.ljydw.top
+  port: 14433
+  type: trojan
+  password: 2b588dab-5240-46a1-974e-7b2fff83edf6
+  sni: 330hk01.ljydw.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 香港6 - giao云
+  server: 330hk02.ljydw.top
+  port: 14433
+  type: trojan
+  password: 2b588dab-5240-46a1-974e-7b2fff83edf6
+  sni: 330hk02.ljydw.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇹🇼 台湾5 - giao云
+  server: 419tw.ljydw.top
+  port: 443
+  type: trojan
+  password: 2b588dab-5240-46a1-974e-7b2fff83edf6
+  sni: 419tw.ljydw.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇹🇼 台湾1 - giao云
+  server: 0309tw.ljydw.top
+  port: 443
+  type: trojan
+  password: 2b588dab-5240-46a1-974e-7b2fff83edf6
+  sni: 0309tw.ljydw.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇹🇼 台湾3 - giao云
+  server: 625tw.ljydw.top
+  port: 80
+  type: trojan
+  password: 2b588dab-5240-46a1-974e-7b2fff83edf6
+  sni: 625tw.ljydw.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇹🇼 台湾2 - giao云
+  server: 805tw.ljydw.top
+  port: 443
+  type: trojan
+  password: 2b588dab-5240-46a1-974e-7b2fff83edf6
+  sni: 805tw.ljydw.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 香港2 - giao云 2
+  server: 316sg02.ljydw.top
+  port: 52229
+  type: trojan
+  password: 2b588dab-5240-46a1-974e-7b2fff83edf6
+  sni: 316sg02.ljydw.top
+  skip-cert-verify: true
+  udp: true
