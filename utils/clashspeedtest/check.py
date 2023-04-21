@@ -5,40 +5,24 @@ from urllib.parse import quote  #https://blog.csdn.net/weixin_43788986/article/d
 testurl2 = 'https://jable.tv/rss/'
 def check(alive, proxy, apiurl, sema, timeout, testurl):
     try:
-        #urllib.parse.quote()   https://blog.csdn.net/weixin_43788986/article/details/125572389
-        #quote() 介绍2：https://blog.csdn.net/weixin_43411585/article/details/89067127
-        r = requests.get(f"http://127.0.0.1:9090/proxies/{quote(proxy['name'], safe='')}/delay", params={
-            'url': testurl,
-            'timeout': timeout
-        }, timeout=10)
-        response = json.loads(r.text)
-        print(response)
-        if response['delay'] > 0:
-            alive['proxies'].append(proxy)
-    except Exception as e:
-        print(e)
-        pass
-    sema.release()
-    """
-    try:
-        #url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl+'&timeout=' + str(timeout)
-        url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl2+'&timeout=' + str(timeout)
+        url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl+'&timeout=' + str(timeout)
+        #url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl2+'&timeout=' + str(timeout)
         r = requests.get(url, timeout=10)
         response = json.loads(r.text)
         print(response)
         if response['delay'] > 0:
             alive.append(proxy)
-            
+            """
             url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl2+'&timeout=' + str(timeout)
             r = requests.get(url, timeout=10)
             response = json.loads(r.text)
             if response['delay'] > 0:
                 alive.append(proxy)
-            
+            """
     except:
         pass
     sema.release()
-    """
+
 """
 ping:
     https://www.google.com/favicon.ico
