@@ -73,7 +73,7 @@ def test_all_latency(   #latency：潜伏
         try:
             with ThreadPoolExecutor(max_workers) as executor:
                 for i in range(int(len(proxyconfig['proxies']))):
-                    executor.submit(test_latency,alive,proxyconfig['proxies'][i],timeout=2000)
+                    executor.submit(lambda p: test_latency(*p),args=[alive,proxyconfig['proxies'][i],timeout=2000])
                     print(' '+ str(i)+' ')
                     
 
