@@ -34,6 +34,7 @@ def test_latency(name, timeout=2000):
             'url': 'https://i.ytimg.com/generate_204',
             'timeout': timeout
         }, timeout=10).json()
+        print(response)
     except Exception as e:
         r = {'message': str(e)}
     print(r)
