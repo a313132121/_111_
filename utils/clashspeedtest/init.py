@@ -46,7 +46,7 @@ def init():
             
     # set clash api url
     #baseurl = '127.0.0.1:' + str(api_port)
-    baseurl = '127.0.0.1:9090
+    baseurl = '127.0.0.1:9090'
     apiurl = 'http://'+baseurl
 
     # filter config files
