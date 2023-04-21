@@ -54,7 +54,6 @@ def init():
 
     config = {'port': http_port, 'external-controller': baseurl, 'mode': 'global',
               'log-level': 'silent', 'proxies': proxyconfig['proxies']}
-    print(proxyconfig['proxies'])
     with open('./temp/working.yaml', 'w') as file:
         file = yaml.dump(config, file)
 
