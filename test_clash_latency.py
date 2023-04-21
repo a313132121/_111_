@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
-import gzip         #https://www.cnblogs.com/eliwang/p/14591861.html
+import gzip      #https://www.cnblogs.com/eliwang/p/14591861.html
+
 import os
+
 import shutil   #主要：拷贝文件https://blog.csdn.net/weixin_41261833/article/details/108050152
 import subprocess   #子进程管理 https://zhuanlan.zhihu.com/p/91342640    https://www.runoob.com/w3cnote/python3-subprocess.html
 from concurrent.futures import ThreadPoolExecutor   #线程池 https://zhuanlan.zhihu.com/p/65638744 https://www.jianshu.com/p/6d6e4f745c27
@@ -13,7 +15,7 @@ import json
 
 import time
 from multiprocessing import Process, Manager, Semaphore
-from tqdm import tqdm
+#from tqdm import tqdm
 
 
 
@@ -75,8 +77,10 @@ def test_all_latency(   #latency：潜伏
     processes =[]
     sema = Semaphore(max_workers)
     time.sleep(5)
-    for i in tqdm(range(int(len(proxyconfig['proxies']))), desc="Testing"):
+    #for i in tqdm(range(int(len(proxyconfig['proxies']))), desc="Testing"):
+    for i in range(int(len(proxyconfig['proxies']))):
         sema.acquire()
+        print('---'+str(i)+'---\n')
         p = Process(target=test_latency, args=(alive,proxyconfig['proxies'][i]))
         p.start()
         processes.append(p)
