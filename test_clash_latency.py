@@ -36,6 +36,7 @@ def download(url, file, unpack_gzip=False):
 
 
 def test_latency(alive,proxy, timeout=2000):
+    
     try:
         #urllib.parse.quote()   https://blog.csdn.net/weixin_43788986/article/details/125572389
         #quote() 介绍2：https://blog.csdn.net/weixin_43411585/article/details/89067127
@@ -67,6 +68,7 @@ def test_all_latency(   #latency：潜伏
         download(config_url, config_path)#下载config.yaml（实际就是节点文件）
     os.chmod(clash_path, 0o755)#os.chmod() 方法用于更改文件或目录的权限。
     #读取节点
+    """
     with open(config_path, 'r') as reader:
         try:
             proxyconfig = yaml.load(reader, Loader=yaml.FullLoader)
@@ -90,6 +92,7 @@ def test_all_latency(   #latency：潜伏
     alive = yaml.dump(alive, default_flow_style=False, sort_keys=False, allow_unicode=True, width=750, indent=2)
     return alive 
     """
+    
     with subprocess.Popen([clash_path, '-f', config_path, '--ext-ctl', ':9090'], stdout=subprocess.PIPE) as popen:
     #subprocess子进程管理 https://zhuanlan.zhihu.com/p/91342640
     #自己推荐看这个 https://www.runoob.com/w3cnote/python3-subprocess.html
@@ -114,10 +117,10 @@ def test_all_latency(   #latency：潜伏
             popen.terminate()#Popen.terminate()停止子进程
         alive = yaml.dump(alive, default_flow_style=False, sort_keys=False, allow_unicode=True, width=750, indent=2)
         return alive    
-    """
+    
 if __name__ == '__main__':
-    #alive = test_all_latency('https://raw.githubusercontent.com/rxsweet/proxies/main/sub/sources/staticAll.yaml', timeout=10000)
-    alive = test_all_latency('https://raw.githubusercontent.com/zsokami/sub/main/trials_providers/All.yaml', timeout=10000)
+    alive = test_all_latency('https://raw.githubusercontent.com/rxsweet/proxies/main/sub/sources/staticAll.yaml', timeout=10000)
+    #alive = test_all_latency('https://raw.githubusercontent.com/zsokami/sub/main/trials_providers/All.yaml', timeout=10000)
     f = open('xxx.yaml', 'w',encoding="UTF-8")
     f.write(alive)
     f.close()
