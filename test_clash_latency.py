@@ -58,32 +58,25 @@ def test_all_latency(   #latency：潜伏
     #subprocess子进程管理 https://zhuanlan.zhihu.com/p/91342640
     #自己推荐看这个 https://www.runoob.com/w3cnote/python3-subprocess.html
     #https://blog.csdn.net/weixin_45314192/article/details/123310026
+        with open(config_path, 'r') as reader:
+            try:
+                proxyconfig = yaml.load(reader, Loader=yaml.FullLoader)
+            except Exception as err:
+                print(err)   
         while b':9090' not in popen.stdout.readline():#为了停止popen.stdout.readline()吗？
             pass    #pass 语句不执行任何操作。语法上需要一个语句，但程序不实际执行任何动作时，可以使用该语句，或者是当站位语句
         try:
-            proxies = requests.get('http://127.0.0.1:9090/proxies').json()['proxies']
-            for k in ('DIRECT', 'REJECT', 'GLOBAL'):
-                del proxies[k]
-            print(proxies)
-            #线程池 https://zhuanlan.zhihu.com/p/65638744 https://www.jianshu.com/p/6d6e4f745c27
-            #threadpoolexecutor.map() https://www.cnblogs.com/rainbow-tan/p/17269543.html
             with ThreadPoolExecutor(max_workers) as executor:
-            
-                items = sorted(zip(proxies, executor.map(lambda name: test_latency(name, timeout), proxies)),key=lambda x: (x[1].get('meanDelay') or float('inf'), x[1].get('delay') or float('inf')))
-                return items
-                """
-                return sorted(
-                    zip(proxies, executor.map(lambda name: test_latency(name, timeout), proxies)),
-                    key=lambda x: (x[1].get('meanDelay') or float('inf'), x[1].get('delay') or float('inf'))
-                )
-                """
+                for i in range(int(len(proxyconfig['proxies']))):
+                    executor.submit(test_latency,alive,proxyconfig['proxies'][i])
+
                 #sorted() 函数对所有可迭代的对象进行排序操作 https://blog.csdn.net/PY0312/article/details/88956795
-                #zip() 函数用于将可迭代的对象作为参数,
+            alive = yaml.dump(alive, default_flow_style=False, sort_keys=False, allow_unicode=True, width=750, indent=2)
+            return alive        #zip() 函数用于将可迭代的对象作为参数,
                 #map() 会根据提供的函数对指定序列做映射 https://blog.csdn.net/PY0312/article/details/88956795
                 #将lambda函数赋值给一个变量，通过这个变量间接调用该lambda函数 https://blog.csdn.net/PY0312/article/details/88956795
         finally:    #无论try语句中是否抛出异常，finally中的语句一定会被执行https://blog.csdn.net/gyniu/article/details/80345160
             popen.terminate()#Popen.terminate()停止子进程
-
 
 if __name__ == '__main__':
     #for item in test_all_latency('https://raw.githubusercontent.com/zsokami/sub/main/trials_providers/All.yaml', timeout=10000):
