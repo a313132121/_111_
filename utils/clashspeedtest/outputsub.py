@@ -40,6 +40,7 @@ def output():
         # 写入clash 订阅文件
         subContent = sub_convert.convert_remote(clashpath,'clash')
         print('write clash file content!')
-        write_file(output_clash_file,subContent)
+        #write_file(output_clash_file,subContent)
+        write_file('./sub/rxxx.yaml',subContent)
     print('\n--------------write file done!--------------\n')
     
