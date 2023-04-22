@@ -18,7 +18,9 @@ def check(alive, proxy, apiurl, sema, timeout, testurl):
             if response['delay'] > 0:
                 alive.append(proxy)
             """
-    except:
+    #except:
+    except Exception as e:
+        r = {'message': str(e)}
         print('===============')
         pass
     sema.release()
