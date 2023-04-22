@@ -20,6 +20,12 @@ def push(list, outfile):
     if int(len(list)) < 1:
         print('\n 没有可用节点 \n')
         return '没有可用节点'
+    for i in tqdm(range(int(len(list))), desc="Parse"):
+        x = list[i]
+        clash['proxies'].append(x)
+        clash['proxy-groups'][0]['proxies'].append(x['name'])
+        clash['proxy-groups'][1]['proxies'].append(x['name'])
+    """    
     with maxminddb.open_database(Country_mmdb_path) as countrify:
         for i in tqdm(range(int(len(list))), desc="good Parse"):
             x = list[i]
@@ -54,10 +60,12 @@ def push(list, outfile):
             # except:
             # print(list[i])
             # pass
-
+    """ 
     with open(outfile, 'w') as writer:
         yaml.dump(clash, writer, sort_keys=False)
         writer.close()
+
+
 
 
 def checkenv():
