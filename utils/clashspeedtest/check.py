@@ -4,10 +4,11 @@ import json
 testurl2 = 'https://jable.tv/rss/'
 def check(alive, proxy, apiurl, sema, timeout, testurl):
     try:
-        #url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl+'&timeout=' + str(timeout)
-        url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl2+'&timeout=' + str(timeout)
+        url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl+'&timeout=' + str(timeout)
+        #url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl2+'&timeout=' + str(timeout)
         r = requests.get(url, timeout=10)
         response = json.loads(r.text)
+        print('response = '+response)
         if response['delay'] > 0:
             alive.append(proxy)
             """
@@ -18,6 +19,7 @@ def check(alive, proxy, apiurl, sema, timeout, testurl):
                 alive.append(proxy)
             """
     except:
+        print('===============')
         pass
     sema.release()
 
