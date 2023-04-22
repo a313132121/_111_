@@ -1,145 +1,364 @@
-port: 7890
-socks-port: 7891
-allow-lan: true
-mode: Rule
-log-level: info
-external-controller: :9090
 proxies:
-  - {name: 🇺🇸 美国 凤凰城101 - 墙了个墙, server: pxvip101.qlgq1.pw, port: 10443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: pxvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: pxvip101}, udp: true}
-  - {name: 🇺🇸 美国 凤凰城102 - 墙了个墙, server: pxvip101.qlgq1.pw, port: 20443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: pxvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: pxvip101}, udp: true}
-  - {name: 🇺🇸 美国 硅谷104 - 墙了个墙, server: svvip101.qlgq1.pw, port: 40443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: svvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: svvip101}, udp: true}
-  - {name: 🇺🇸 美国 硅谷102 - 墙了个墙, server: svvip101.qlgq1.pw, port: 20443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: svvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: svvip101}, udp: true}
-  - {name: 🇺🇸 美国 硅谷101 - 墙了个墙, server: svvip101.qlgq1.pw, port: 10443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: svvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: svvip101}, udp: true}
-  - {name: 🇺🇸 美国 硅谷105 - 墙了个墙, server: svvip101.qlgq1.pw, port: 50443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: svvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: svvip101}, udp: true}
-  - {name: 🇩🇪 德国 法兰克福104 - 墙了个墙, server: fkvip101.qlgq1.pw, port: 40443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: fkvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: fkvip101}, udp: true}
-  - {name: 🇩🇪 德国 法兰克福103 - 墙了个墙, server: fkvip101.qlgq1.pw, port: 30443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: fkvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: fkvip101}, udp: true}
-  - {name: 🇩🇪 德国 法兰克福101 - 墙了个墙, server: fkvip101.qlgq1.pw, port: 10443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: fkvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: fkvip101}, udp: true}
-  - {name: 🇩🇪 德国 法兰克福105 - 墙了个墙, server: fkvip101.qlgq1.pw, port: 50443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: fkvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: fkvip101}, udp: true}
-  - {name: 🇺🇸 美国 直连2 - 爱猫论坛, server: us2.netflix6.com, port: 443, type: vmess, uuid: 90670022-23ce-393e-a45c-82b23d193db1, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /hls/us8.m3u8, headers: {Host: us2.netflix6.com}}, udp: true}
-  - {name: 🇺🇸 美国 直连3 - 爱猫论坛, server: us3.netflix6.com, port: 31235, type: vmess, uuid: 90670022-23ce-393e-a45c-82b23d193db1, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /maohk3, headers: {Host: us3.netflix6.com}}, udp: true}
-  - {name: 🇺🇸 美国 直连4 - 爱猫论坛, server: us4.netflix6.com, port: 31235, type: vmess, uuid: 90670022-23ce-393e-a45c-82b23d193db1, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /maohk3, headers: {Host: us4.netflix6.com}}, udp: true}
-  - {name: 🇯🇵 日本 103 - 墙了个墙, server: jpvip102.qlgq1.pw, port: 30443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: jpvip102.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: jpvip102}, udp: true}
-  - {name: 🇯🇵 日本 105 - 墙了个墙, server: jpvip102.qlgq1.pw, port: 50443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: jpvip102.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: jpvip102}, udp: true}
-  - {name: 🇬🇧 英国 105 - 墙了个墙, server: ukvip101.qlgq1.pw, port: 50443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: ukvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: ukvip101}, udp: true}
-  - {name: 🇬🇧 英国 103 - 墙了个墙, server: ukvip101.qlgq1.pw, port: 30443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: ukvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: ukvip101}, udp: true}
-  - {name: 🇬🇧 英国 101 - 墙了个墙, server: ukvip101.qlgq1.pw, port: 10443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: ukvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: ukvip101}, udp: true}
-  - {name: 🇯🇵 日本 102 - 墙了个墙, server: jpvip102.qlgq1.pw, port: 20443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: jpvip102.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: jpvip102}, udp: true}
-  - {name: 🇺🇸 美国 直连1 - 爱猫论坛, server: us1.netflix6.com, port: 443, type: vmess, uuid: 90670022-23ce-393e-a45c-82b23d193db1, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /hls/us8.m3u8, headers: {Host: us1.netflix6.com}}, udp: true}
-  - {name: 🇭🇰 香港 直连1 - 爱猫论坛, server: hk1.netflix6.com, port: 2443, type: vmess, uuid: 90670022-23ce-393e-a45c-82b23d193db1, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /maohk3, headers: {Host: hk1.netflix6.com}}, udp: true}
-  - {name: 🇯🇵 日本 - giao云, server: jp1117.ljydw.top, port: 80, type: trojan, password: 4a7644fb-0753-4291-a9f2-81478d9f6861, sni: jp1117.ljydw.top, skip-cert-verify: true, udp: true}
+- name: "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u51E4\u51F0\u57CE101 - \u5899\u4E86\u4E2A\
+    \u5899"
+  server: pxvip101.qlgq1.pw
+  port: 10443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: pxvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: pxvip101
+  udp: true
+- name: "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u51E4\u51F0\u57CE102 - \u5899\u4E86\u4E2A\
+    \u5899"
+  server: pxvip101.qlgq1.pw
+  port: 20443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: pxvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: pxvip101
+  udp: true
+- name: "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u51E4\u51F0\u57CE103 - \u5899\u4E86\u4E2A\
+    \u5899"
+  server: pxvip101.qlgq1.pw
+  port: 30443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: pxvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: pxvip101
+  udp: true
+- name: "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37101 - \u5899\u4E86\u4E2A\u5899"
+  server: svvip101.qlgq1.pw
+  port: 10443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: svvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: svvip101
+  udp: true
+- name: "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37105 - \u5899\u4E86\u4E2A\u5899"
+  server: svvip101.qlgq1.pw
+  port: 50443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: svvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: svvip101
+  udp: true
+- name: "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37103 - \u5899\u4E86\u4E2A\u5899"
+  server: svvip101.qlgq1.pw
+  port: 30443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: svvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: svvip101
+  udp: true
+- name: "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37104 - \u5899\u4E86\u4E2A\u5899"
+  server: svvip101.qlgq1.pw
+  port: 40443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: svvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: svvip101
+  udp: true
+- name: "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37102 - \u5899\u4E86\u4E2A\u5899"
+  server: svvip101.qlgq1.pw
+  port: 20443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: svvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: svvip101
+  udp: true
+- name: "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u76F4\u8FDE2 - \u7231\u732B\u8BBA\u575B"
+  server: us2.netflix6.com
+  port: 443
+  type: vmess
+  uuid: 90670022-23ce-393e-a45c-82b23d193db1
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /hls/us8.m3u8
+    headers:
+      Host: us2.netflix6.com
+  udp: true
+- name: "\U0001F1EC\U0001F1E7 \u82F1\u56FD 105 - \u5899\u4E86\u4E2A\u5899"
+  server: ukvip101.qlgq1.pw
+  port: 50443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: ukvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: ukvip101
+  udp: true
+- name: "\U0001F1EC\U0001F1E7 \u82F1\u56FD 103 - \u5899\u4E86\u4E2A\u5899"
+  server: ukvip101.qlgq1.pw
+  port: 30443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: ukvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: ukvip101
+  udp: true
+- name: "\U0001F1E9\U0001F1EA \u5FB7\u56FD \u6CD5\u5170\u514B\u798F101 - \u5899\u4E86\
+    \u4E2A\u5899"
+  server: fkvip101.qlgq1.pw
+  port: 10443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: fkvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: fkvip101
+  udp: true
+- name: "\U0001F1E9\U0001F1EA \u5FB7\u56FD \u6CD5\u5170\u514B\u798F105 - \u5899\u4E86\
+    \u4E2A\u5899"
+  server: fkvip101.qlgq1.pw
+  port: 50443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: fkvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: fkvip101
+  udp: true
+- name: "\U0001F1EF\U0001F1F5 \u65E5\u672C 101 - \u5899\u4E86\u4E2A\u5899"
+  server: jpvip102.qlgq1.pw
+  port: 10443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: jpvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: jpvip102
+  udp: true
+- name: "\U0001F1EF\U0001F1F5 \u65E5\u672C 104 - \u5899\u4E86\u4E2A\u5899"
+  server: jpvip102.qlgq1.pw
+  port: 40443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: jpvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: jpvip102
+  udp: true
+- name: "\U0001F1EF\U0001F1F5 \u65E5\u672C 102 - \u5899\u4E86\u4E2A\u5899"
+  server: jpvip102.qlgq1.pw
+  port: 20443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: jpvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: jpvip102
+  udp: true
+- name: "\U0001F1E9\U0001F1EA \u5FB7\u56FD \u6CD5\u5170\u514B\u798F104 - \u5899\u4E86\
+    \u4E2A\u5899"
+  server: fkvip101.qlgq1.pw
+  port: 40443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: fkvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: fkvip101
+  udp: true
+- name: "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u76F4\u8FDE3 - \u7231\u732B\u8BBA\u575B"
+  server: us3.netflix6.com
+  port: 31235
+  type: vmess
+  uuid: 90670022-23ce-393e-a45c-82b23d193db1
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /maohk3
+    headers:
+      Host: us3.netflix6.com
+  udp: true
+- name: "\U0001F1EC\U0001F1E7 \u82F1\u56FD 102 - \u5899\u4E86\u4E2A\u5899"
+  server: ukvip101.qlgq1.pw
+  port: 20443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: ukvip101.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: ukvip101
+  udp: true
+- name: "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u76F4\u8FDE4 - \u7231\u732B\u8BBA\u575B"
+  server: us4.netflix6.com
+  port: 31235
+  type: vmess
+  uuid: 90670022-23ce-393e-a45c-82b23d193db1
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /maohk3
+    headers:
+      Host: us4.netflix6.com
+  udp: true
+- name: "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u76F4\u8FDE1 - \u7231\u732B\u8BBA\u575B"
+  server: us1.netflix6.com
+  port: 443
+  type: vmess
+  uuid: 90670022-23ce-393e-a45c-82b23d193db1
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /hls/us8.m3u8
+    headers:
+      Host: us1.netflix6.com
+  udp: true
+- name: "\U0001F1ED\U0001F1F0 \u9999\u6E2F 102 - \u5899\u4E86\u4E2A\u5899"
+  server: hkvip102.qlgq1.pw
+  port: 20443
+  type: trojan
+  password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332
+  sni: hkvip102.qlgq1.pw
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: hkvip102
+  udp: true
+- name: "\U0001F1ED\U0001F1F0 \u9999\u6E2F \u76F4\u8FDE1 - \u7231\u732B\u8BBA\u575B"
+  server: hk1.netflix6.com
+  port: 2443
+  type: vmess
+  uuid: 90670022-23ce-393e-a45c-82b23d193db1
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /maohk3
+    headers:
+      Host: hk1.netflix6.com
+  udp: true
+- name: "\U0001F1EF\U0001F1F5 \u65E5\u672C - giao\u4E91"
+  server: jp1117.ljydw.top
+  port: 80
+  type: trojan
+  password: 4a7644fb-0753-4291-a9f2-81478d9f6861
+  sni: jp1117.ljydw.top
+  skip-cert-verify: true
+  udp: true
+- name: "\U0001F1ED\U0001F1F0 \u9999\u6E2F2 - giao\u4E91 2"
+  server: 316sg02.ljydw.top
+  port: 52229
+  type: trojan
+  password: 4a7644fb-0753-4291-a9f2-81478d9f6861
+  sni: 316sg02.ljydw.top
+  skip-cert-verify: true
+  udp: true
 proxy-groups:
-  - name: 手动切换
-    type: select
-    proxies:
-      - 🇺🇸 美国 凤凰城101 - 墙了个墙
-      - 🇺🇸 美国 凤凰城102 - 墙了个墙
-      - 🇺🇸 美国 硅谷104 - 墙了个墙
-      - 🇺🇸 美国 硅谷102 - 墙了个墙
-      - 🇺🇸 美国 硅谷101 - 墙了个墙
-      - 🇺🇸 美国 硅谷105 - 墙了个墙
-      - 🇩🇪 德国 法兰克福104 - 墙了个墙
-      - 🇩🇪 德国 法兰克福103 - 墙了个墙
-      - 🇩🇪 德国 法兰克福101 - 墙了个墙
-      - 🇩🇪 德国 法兰克福105 - 墙了个墙
-      - 🇺🇸 美国 直连2 - 爱猫论坛
-      - 🇺🇸 美国 直连3 - 爱猫论坛
-      - 🇺🇸 美国 直连4 - 爱猫论坛
-      - 🇯🇵 日本 103 - 墙了个墙
-      - 🇯🇵 日本 105 - 墙了个墙
-      - 🇬🇧 英国 105 - 墙了个墙
-      - 🇬🇧 英国 103 - 墙了个墙
-      - 🇬🇧 英国 101 - 墙了个墙
-      - 🇯🇵 日本 102 - 墙了个墙
-      - 🇺🇸 美国 直连1 - 爱猫论坛
-      - 🇭🇰 香港 直连1 - 爱猫论坛
-      - 🇯🇵 日本 - giao云
-  - name: 自动选择
-    type: url-test
-    url: https://www.google.com/favicon.ico
-    interval: 300
-    tolerance: 50
-    proxies:
-      - 🇺🇸 美国 凤凰城101 - 墙了个墙
-      - 🇺🇸 美国 凤凰城102 - 墙了个墙
-      - 🇺🇸 美国 硅谷104 - 墙了个墙
-      - 🇺🇸 美国 硅谷102 - 墙了个墙
-      - 🇺🇸 美国 硅谷101 - 墙了个墙
-      - 🇺🇸 美国 硅谷105 - 墙了个墙
-      - 🇩🇪 德国 法兰克福104 - 墙了个墙
-      - 🇩🇪 德国 法兰克福103 - 墙了个墙
-      - 🇩🇪 德国 法兰克福101 - 墙了个墙
-      - 🇩🇪 德国 法兰克福105 - 墙了个墙
-      - 🇺🇸 美国 直连2 - 爱猫论坛
-      - 🇺🇸 美国 直连3 - 爱猫论坛
-      - 🇺🇸 美国 直连4 - 爱猫论坛
-      - 🇯🇵 日本 103 - 墙了个墙
-      - 🇯🇵 日本 105 - 墙了个墙
-      - 🇬🇧 英国 105 - 墙了个墙
-      - 🇬🇧 英国 103 - 墙了个墙
-      - 🇬🇧 英国 101 - 墙了个墙
-      - 🇯🇵 日本 102 - 墙了个墙
-      - 🇺🇸 美国 直连1 - 爱猫论坛
-      - 🇭🇰 香港 直连1 - 爱猫论坛
-      - 🇯🇵 日本 - giao云
-  - name: 负载均衡
-    type: load-balance
-    strategy: consistent-hashing
-    url: https://www.google.com/favicon.ico
-    interval: 300
-    tolerance: 50
-    proxies:
-      - 🇺🇸 美国 凤凰城101 - 墙了个墙
-      - 🇺🇸 美国 凤凰城102 - 墙了个墙
-      - 🇺🇸 美国 硅谷104 - 墙了个墙
-      - 🇺🇸 美国 硅谷102 - 墙了个墙
-      - 🇺🇸 美国 硅谷101 - 墙了个墙
-      - 🇺🇸 美国 硅谷105 - 墙了个墙
-      - 🇩🇪 德国 法兰克福104 - 墙了个墙
-      - 🇩🇪 德国 法兰克福103 - 墙了个墙
-      - 🇩🇪 德国 法兰克福101 - 墙了个墙
-      - 🇩🇪 德国 法兰克福105 - 墙了个墙
-      - 🇺🇸 美国 直连2 - 爱猫论坛
-      - 🇺🇸 美国 直连3 - 爱猫论坛
-      - 🇺🇸 美国 直连4 - 爱猫论坛
-      - 🇯🇵 日本 103 - 墙了个墙
-      - 🇯🇵 日本 105 - 墙了个墙
-      - 🇬🇧 英国 105 - 墙了个墙
-      - 🇬🇧 英国 103 - 墙了个墙
-      - 🇬🇧 英国 101 - 墙了个墙
-      - 🇯🇵 日本 102 - 墙了个墙
-      - 🇺🇸 美国 直连1 - 爱猫论坛
-      - 🇭🇰 香港 直连1 - 爱猫论坛
-      - 🇯🇵 日本 - giao云
-  - name: 中国节点
-    type: select
-    proxies:
-      - 🇭🇰 香港 直连1 - 爱猫论坛
-  - name: 日本节点
-    type: select
-    proxies:
-      - 🇯🇵 日本 103 - 墙了个墙
-      - 🇯🇵 日本 105 - 墙了个墙
-      - 🇯🇵 日本 102 - 墙了个墙
-      - 🇯🇵 日本 - giao云
-  - name: 新加坡节点
-    type: select
-    proxies:
-      - DIRECT
-  - name: 美国节点
-    type: url-test
-    url: https://www.google.com/favicon.ico
-    interval: 300
-    tolerance: 150
-    proxies:
-      - 🇺🇸 美国 凤凰城101 - 墙了个墙
-      - 🇺🇸 美国 凤凰城102 - 墙了个墙
-      - 🇺🇸 美国 硅谷104 - 墙了个墙
-      - 🇺🇸 美国 硅谷102 - 墙了个墙
-      - 🇺🇸 美国 硅谷101 - 墙了个墙
-      - 🇺🇸 美国 硅谷105 - 墙了个墙
-      - 🇺🇸 美国 直连2 - 爱猫论坛
-      - 🇺🇸 美国 直连3 - 爱猫论坛
-      - 🇺🇸 美国 直连4 - 爱猫论坛
-      - 🇺🇸 美国 直连1 - 爱猫论坛
+- name: automatic
+  type: url-test
+  proxies:
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u51E4\u51F0\u57CE101 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u51E4\u51F0\u57CE102 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u51E4\u51F0\u57CE103 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37101 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37105 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37103 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37104 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37102 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u76F4\u8FDE2 - \u7231\u732B\u8BBA\u575B"
+  - "\U0001F1EC\U0001F1E7 \u82F1\u56FD 105 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1EC\U0001F1E7 \u82F1\u56FD 103 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1E9\U0001F1EA \u5FB7\u56FD \u6CD5\u5170\u514B\u798F101 - \u5899\u4E86\u4E2A\
+    \u5899"
+  - "\U0001F1E9\U0001F1EA \u5FB7\u56FD \u6CD5\u5170\u514B\u798F105 - \u5899\u4E86\u4E2A\
+    \u5899"
+  - "\U0001F1EF\U0001F1F5 \u65E5\u672C 101 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1EF\U0001F1F5 \u65E5\u672C 104 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1EF\U0001F1F5 \u65E5\u672C 102 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1E9\U0001F1EA \u5FB7\u56FD \u6CD5\u5170\u514B\u798F104 - \u5899\u4E86\u4E2A\
+    \u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u76F4\u8FDE3 - \u7231\u732B\u8BBA\u575B"
+  - "\U0001F1EC\U0001F1E7 \u82F1\u56FD 102 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u76F4\u8FDE4 - \u7231\u732B\u8BBA\u575B"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u76F4\u8FDE1 - \u7231\u732B\u8BBA\u575B"
+  - "\U0001F1ED\U0001F1F0 \u9999\u6E2F 102 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1ED\U0001F1F0 \u9999\u6E2F \u76F4\u8FDE1 - \u7231\u732B\u8BBA\u575B"
+  - "\U0001F1EF\U0001F1F5 \u65E5\u672C - giao\u4E91"
+  - "\U0001F1ED\U0001F1F0 \u9999\u6E2F2 - giao\u4E91 2"
+  url: https://www.google.com/favicon.ico
+  interval: 300
+- name: "\U0001F310 Proxy"
+  type: select
+  proxies:
+  - automatic
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u51E4\u51F0\u57CE101 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u51E4\u51F0\u57CE102 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u51E4\u51F0\u57CE103 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37101 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37105 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37103 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37104 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u7845\u8C37102 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u76F4\u8FDE2 - \u7231\u732B\u8BBA\u575B"
+  - "\U0001F1EC\U0001F1E7 \u82F1\u56FD 105 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1EC\U0001F1E7 \u82F1\u56FD 103 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1E9\U0001F1EA \u5FB7\u56FD \u6CD5\u5170\u514B\u798F101 - \u5899\u4E86\u4E2A\
+    \u5899"
+  - "\U0001F1E9\U0001F1EA \u5FB7\u56FD \u6CD5\u5170\u514B\u798F105 - \u5899\u4E86\u4E2A\
+    \u5899"
+  - "\U0001F1EF\U0001F1F5 \u65E5\u672C 101 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1EF\U0001F1F5 \u65E5\u672C 104 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1EF\U0001F1F5 \u65E5\u672C 102 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1E9\U0001F1EA \u5FB7\u56FD \u6CD5\u5170\u514B\u798F104 - \u5899\u4E86\u4E2A\
+    \u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u76F4\u8FDE3 - \u7231\u732B\u8BBA\u575B"
+  - "\U0001F1EC\U0001F1E7 \u82F1\u56FD 102 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u76F4\u8FDE4 - \u7231\u732B\u8BBA\u575B"
+  - "\U0001F1FA\U0001F1F8 \u7F8E\u56FD \u76F4\u8FDE1 - \u7231\u732B\u8BBA\u575B"
+  - "\U0001F1ED\U0001F1F0 \u9999\u6E2F 102 - \u5899\u4E86\u4E2A\u5899"
+  - "\U0001F1ED\U0001F1F0 \u9999\u6E2F \u76F4\u8FDE1 - \u7231\u732B\u8BBA\u575B"
+  - "\U0001F1EF\U0001F1F5 \u65E5\u672C - giao\u4E91"
+  - "\U0001F1ED\U0001F1F0 \u9999\u6E2F2 - giao\u4E91 2"
 rules:
- - MATCH,手动切换
+- "MATCH,\U0001F310 Proxy"
