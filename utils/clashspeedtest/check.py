@@ -1,15 +1,10 @@
 import requests
 import json
-from urllib.parse import quote  #https://blog.csdn.net/weixin_43788986/article/details/125572389
 
 testurl2 = 'https://jable.tv/rss/'
 def check(alive, proxy, apiurl, sema, timeout, testurl):
     try:
-        #url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl+'&timeout=' + str(timeout)
-         
-        proxyname = quote(proxy['name'], safe='')
-        url =apiurl + '/proxies/' + proxyname + '/delay?url='+testurl+'&timeout=' + str(timeout)
-        print('url ='+url+'\n')
+        url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl+'&timeout=' + str(timeout)
         #url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl2+'&timeout=' + str(timeout)
         r = requests.get(url, timeout=10)
         response = json.loads(r.text)
