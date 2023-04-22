@@ -8,7 +8,7 @@ def check(alive, proxy, apiurl, sema, timeout, testurl):
         #url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl+'&timeout=' + str(timeout)
          
         proxyname = quote(proxy['name'], safe='')
-        url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl+'&timeout=' + str(timeout)
+        url =apiurl + '/proxies/' + proxyname + '/delay?url='+testurl+'&timeout=' + str(timeout)
         print('url ='+url+'\n')
         #url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl2+'&timeout=' + str(timeout)
         r = requests.get(url, timeout=10)
