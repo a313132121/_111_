@@ -80,7 +80,7 @@ def test_all_latency(   #latency：潜伏
             with ThreadPoolExecutor(max_workers) as executor:
                 for i in range(int(len(proxyconfig['proxies']))):
                     sema.acquire()
-                    executor.submit(lambda p: test_latency(*p),args=[alive,proxyconfig['proxies'][i]],sema,1000)
+                    executor.submit(lambda p: test_latency(*p),args=[alive,proxyconfig['proxies'][i],sema,1000])
                     print(' '+ str(i)+' ')
                     
 
