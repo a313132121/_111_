@@ -9,6 +9,8 @@ import requests #python中requests库使用方法详解 https://zhuanlan.zhihu.c
 
 import yaml
 import json
+from multiprocessing import Process, Manager, Semaphore
+
 
 def download(url, file, unpack_gzip=False):
     os.makedirs(os.path.normpath(os.path.dirname(file)), exist_ok=True)
@@ -25,7 +27,7 @@ def download(url, file, unpack_gzip=False):
             _in = gzip.open(_in)    #解压文件https://www.cnblogs.com/eliwang/p/14591861.html
         shutil.copyfileobj(_in, _out)   #拷贝文件https://zhuanlan.zhihu.com/p/213919757 和 https://www.cnblogs.com/xiangsikai/p/7787101.html
 
-def test_latency(alive,proxy,timeout=2000):
+def test_latency(alive,proxy,sema,timeout=2000):
     try:
         #urllib.parse.quote()   https://blog.csdn.net/weixin_43788986/article/details/125572389
         #quote() 介绍2：https://blog.csdn.net/weixin_43411585/article/details/89067127
@@ -40,6 +42,8 @@ def test_latency(alive,proxy,timeout=2000):
             print(str(response['delay']) + '=====' + proxy[name])
     except Exception as e:
         print(e + '----' + proxy[name])
+        pass
+    sema.release()
 
 
 
@@ -59,6 +63,8 @@ def test_all_latency(   #latency：潜伏
         download(config_url, config_path)#下载config.yaml（实际就是节点文件）
     os.chmod(clash_path, 0o755)#os.chmod() 方法用于更改文件或目录的权限。
     alive = {'proxies':[]}
+    sema = Semaphore(max_workers)
+    
     with subprocess.Popen([clash_path, '-f', config_path, '--ext-ctl', ':9090'], stdout=subprocess.PIPE) as popen:
     #subprocess子进程管理 https://zhuanlan.zhihu.com/p/91342640
     #自己推荐看这个 https://www.runoob.com/w3cnote/python3-subprocess.html
@@ -73,7 +79,7 @@ def test_all_latency(   #latency：潜伏
         try:
             with ThreadPoolExecutor(max_workers) as executor:
                 for i in range(int(len(proxyconfig['proxies']))):
-                    executor.submit(lambda p: test_latency(*p),args=[alive,proxyconfig['proxies'][i]])
+                    executor.submit(lambda p: test_latency(*p),args=[alive,proxyconfig['proxies'][i]],sema,1000)
                     print(' '+ str(i)+' ')
                     
 
@@ -87,8 +93,8 @@ def test_all_latency(   #latency：潜伏
 
 if __name__ == '__main__':
     #for item in test_all_latency('https://raw.githubusercontent.com/zsokami/sub/main/trials_providers/All.yaml', timeout=10000):
-    alive = test_all_latency('https://raw.githubusercontent.com/rxsweet/proxies/main/sub/sources/staticAll.yaml', timeout=10000)
-    #alive = test_all_latency('https://raw.githubusercontent.com/zsokami/sub/main/trials_providers/All.yaml', timeout=10000)
+    #alive = test_all_latency('https://raw.githubusercontent.com/rxsweet/proxies/main/sub/sources/staticAll.yaml', timeout=10000)
+    alive = test_all_latency('https://raw.githubusercontent.com/zsokami/sub/main/trials_providers/All.yaml', timeout=10000)
     f = open('xxx.yaml', 'w',encoding="UTF-8")
     f.write(alive)
     f.close()
