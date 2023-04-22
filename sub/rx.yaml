@@ -1,0 +1,152 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+proxies:
+  - {name: 🇺🇸 US 1, server: pxvip101.qlgq1.pw, port: 30443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: pxvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: pxvip101}, udp: true}
+  - {name: 🇺🇸 US 2, server: pxvip101.qlgq1.pw, port: 20443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: pxvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: pxvip101}, udp: true}
+  - {name: 🇺🇸 US 3, server: pxvip101.qlgq1.pw, port: 10443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: pxvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: pxvip101}, udp: true}
+  - {name: 🇩🇪 DE 4, server: fkvip101.qlgq1.pw, port: 20443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: fkvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: fkvip101}, udp: true}
+  - {name: 🇩🇪 DE 5, server: fkvip101.qlgq1.pw, port: 50443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: fkvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: fkvip101}, udp: true}
+  - {name: 🇩🇪 DE 6, server: fkvip101.qlgq1.pw, port: 40443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: fkvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: fkvip101}, udp: true}
+  - {name: 🇩🇪 DE 7, server: fkvip101.qlgq1.pw, port: 30443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: fkvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: fkvip101}, udp: true}
+  - {name: 🇩🇪 DE 8, server: fkvip101.qlgq1.pw, port: 10443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: fkvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: fkvip101}, udp: true}
+  - {name: 🇺🇸 US 9, server: svvip101.qlgq1.pw, port: 10443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: svvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: svvip101}, udp: true}
+  - {name: 🇺🇸 US 10, server: svvip101.qlgq1.pw, port: 30443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: svvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: svvip101}, udp: true}
+  - {name: 🇺🇸 US 11, server: svvip101.qlgq1.pw, port: 50443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: svvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: svvip101}, udp: true}
+  - {name: 🇺🇸 US 12, server: svvip101.qlgq1.pw, port: 40443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: svvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: svvip101}, udp: true}
+  - {name: 🇺🇸 US 13, server: svvip101.qlgq1.pw, port: 20443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: svvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: svvip101}, udp: true}
+  - {name: 🇬🇧 GB 14, server: ukvip101.qlgq1.pw, port: 20443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: ukvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: ukvip101}, udp: true}
+  - {name: 🇬🇧 GB 15, server: ukvip101.qlgq1.pw, port: 50443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: ukvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: ukvip101}, udp: true}
+  - {name: 🇬🇧 GB 16, server: ukvip101.qlgq1.pw, port: 10443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: ukvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: ukvip101}, udp: true}
+  - {name: 🇬🇧 GB 17, server: ukvip101.qlgq1.pw, port: 40443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: ukvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: ukvip101}, udp: true}
+  - {name: 🇬🇧 GB 18, server: ukvip101.qlgq1.pw, port: 30443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: ukvip101.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: ukvip101}, udp: true}
+  - {name: 🇯🇵 JP 19, server: jpvip102.qlgq1.pw, port: 10443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: jpvip102.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: jpvip102}, udp: true}
+  - {name: 🇯🇵 JP 20, server: jpvip102.qlgq1.pw, port: 50443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: jpvip102.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: jpvip102}, udp: true}
+  - {name: 🇯🇵 JP 21, server: jpvip102.qlgq1.pw, port: 20443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: jpvip102.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: jpvip102}, udp: true}
+  - {name: 🇯🇵 JP 22, server: jpvip102.qlgq1.pw, port: 40443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: jpvip102.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: jpvip102}, udp: true}
+  - {name: 🇯🇵 JP 23, server: jpvip102.qlgq1.pw, port: 30443, type: trojan, password: 09db6f44-13e3-3a8d-9ed5-f7340f95b332, sni: jpvip102.qlgq1.pw, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: jpvip102}, udp: true}
+  - {name: AE 24, server: jp1117.ljydw.top, port: 80, type: trojan, password: 4a7644fb-0753-4291-a9f2-81478d9f6861, sni: jp1117.ljydw.top, skip-cert-verify: true, udp: true}
+proxy-groups:
+  - name: 手动切换
+    type: select
+    proxies:
+      - 🇺🇸 US 1
+      - 🇺🇸 US 2
+      - 🇺🇸 US 3
+      - 🇩🇪 DE 4
+      - 🇩🇪 DE 5
+      - 🇩🇪 DE 6
+      - 🇩🇪 DE 7
+      - 🇩🇪 DE 8
+      - 🇺🇸 US 9
+      - 🇺🇸 US 10
+      - 🇺🇸 US 11
+      - 🇺🇸 US 12
+      - 🇺🇸 US 13
+      - 🇬🇧 GB 14
+      - 🇬🇧 GB 15
+      - 🇬🇧 GB 16
+      - 🇬🇧 GB 17
+      - 🇬🇧 GB 18
+      - 🇯🇵 JP 19
+      - 🇯🇵 JP 20
+      - 🇯🇵 JP 21
+      - 🇯🇵 JP 22
+      - 🇯🇵 JP 23
+      - AE 24
+  - name: 自动选择
+    type: url-test
+    url: https://www.google.com/favicon.ico
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇺🇸 US 1
+      - 🇺🇸 US 2
+      - 🇺🇸 US 3
+      - 🇩🇪 DE 4
+      - 🇩🇪 DE 5
+      - 🇩🇪 DE 6
+      - 🇩🇪 DE 7
+      - 🇩🇪 DE 8
+      - 🇺🇸 US 9
+      - 🇺🇸 US 10
+      - 🇺🇸 US 11
+      - 🇺🇸 US 12
+      - 🇺🇸 US 13
+      - 🇬🇧 GB 14
+      - 🇬🇧 GB 15
+      - 🇬🇧 GB 16
+      - 🇬🇧 GB 17
+      - 🇬🇧 GB 18
+      - 🇯🇵 JP 19
+      - 🇯🇵 JP 20
+      - 🇯🇵 JP 21
+      - 🇯🇵 JP 22
+      - 🇯🇵 JP 23
+      - AE 24
+  - name: 负载均衡
+    type: load-balance
+    strategy: consistent-hashing
+    url: https://www.google.com/favicon.ico
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇺🇸 US 1
+      - 🇺🇸 US 2
+      - 🇺🇸 US 3
+      - 🇩🇪 DE 4
+      - 🇩🇪 DE 5
+      - 🇩🇪 DE 6
+      - 🇩🇪 DE 7
+      - 🇩🇪 DE 8
+      - 🇺🇸 US 9
+      - 🇺🇸 US 10
+      - 🇺🇸 US 11
+      - 🇺🇸 US 12
+      - 🇺🇸 US 13
+      - 🇬🇧 GB 14
+      - 🇬🇧 GB 15
+      - 🇬🇧 GB 16
+      - 🇬🇧 GB 17
+      - 🇬🇧 GB 18
+      - 🇯🇵 JP 19
+      - 🇯🇵 JP 20
+      - 🇯🇵 JP 21
+      - 🇯🇵 JP 22
+      - 🇯🇵 JP 23
+      - AE 24
+  - name: 中国节点
+    type: select
+    proxies:
+      - DIRECT
+  - name: 日本节点
+    type: select
+    proxies:
+      - 🇯🇵 JP 19
+      - 🇯🇵 JP 20
+      - 🇯🇵 JP 21
+      - 🇯🇵 JP 22
+      - 🇯🇵 JP 23
+  - name: 新加坡节点
+    type: select
+    proxies:
+      - DIRECT
+  - name: 美国节点
+    type: url-test
+    url: https://www.google.com/favicon.ico
+    interval: 300
+    tolerance: 150
+    proxies:
+      - 🇺🇸 US 1
+      - 🇺🇸 US 2
+      - 🇺🇸 US 3
+      - 🇺🇸 US 9
+      - 🇺🇸 US 10
+      - 🇺🇸 US 11
+      - 🇺🇸 US 12
+      - 🇺🇸 US 13
+rules:
+ - MATCH,手动切换
