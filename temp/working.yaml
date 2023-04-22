@@ -19966,3 +19966,131 @@ proxies:
   skip-cert-verify: true
   sni: data.amazon-azure.com
   type: trojan
+- cipher: chacha20-ietf-poly1305
+  name: "\U0001F1ED\U0001F1F0 HK|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  password: ffdbfa52-48f9-4095-b06d-50de19681d2f
+  port: 61090
+  server: a.gfw.services
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: "\U0001F1ED\U0001F1F0 HK|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  password: ffdbfa52-48f9-4095-b06d-50de19681d2f
+  port: 60548
+  server: a.gfw.services
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: "\U0001F1FA\U0001F1F8 US|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  password: 6415427a-485c-41b8-993f-3fc0a8e78bd6
+  port: 44323
+  server: zz.lemontea.shop
+  type: ss
+- cipher: aes-256-gcm
+  name: "\U0001F1ED\U0001F1F0 HK|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  password: dbd3687f-fa31-4fa6-8562-7d69a2f548b0
+  port: 40002
+  server: gzdx.jcnode.top
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: "\U0001F1EF\U0001F1F5 JP|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  password: 6415427a-485c-41b8-993f-3fc0a8e78bd6
+  port: 12845
+  server: zz.lemontea.shop
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: "\U0001F1E9\U0001F1EA DE|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  password: a3f866bc-4de7-4f50-a69d-f81842a47333
+  port: 31107
+  server: 01.node.vmssr.info
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: "\U0001F1FA\U0001F1F8 US|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  password: 6415427a-485c-41b8-993f-3fc0a8e78bd6
+  port: 42143
+  server: zz.lemontea.shop
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: "\U0001F1EF\U0001F1F5 JP|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  password: 0166f2b0-762e-465c-96fa-199b74538306
+  port: 12325
+  server: zz.lemontea.shop
+  type: ss
+- alterId: 0
+  cipher: auto
+  name: "\U0001F1F3\U0001F1F1 NL|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  network: tcp
+  port: 48823
+  server: 156.225.67.250
+  skip-cert-vertify: true
+  tls: false
+  type: vmess
+  uuid: 3fd637ad-46fe-4f85-a6e8-86b00bca1122
+  ws-opts:
+    headers:
+      Host: 156.225.67.250
+    path: /
+- cipher: chacha20-ietf-poly1305
+  name: "\U0001F1F8\U0001F1EC SG|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  password: ffdbfa52-48f9-4095-b06d-50de19681d2f
+  port: 35667
+  server: a.gfw.services
+  type: ss
+- alterId: 0
+  cipher: auto
+  name: "\U0001F1EF\U0001F1F5 JP|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  network: ws
+  port: 4011
+  server: gm1g.jikenodes.xyz
+  skip-cert-vertify: true
+  tls: false
+  type: vmess
+  uuid: 158228ff-5b8e-4d4d-a015-e0574eec2b0b
+  ws-opts:
+    headers:
+      Host: board.jike99.xyz
+    path: /
+- cipher: chacha20-ietf-poly1305
+  name: "\U0001F1FA\U0001F1F8 US|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  password: j4wkIrreHEdC
+  port: 443
+  server: 37.218.241.130
+  type: ss
+- name: "\U0001F1E9\U0001F1EA DE|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  password: e7a8b4ba-088f-86d0-d227-fcaa9e54addc
+  port: 443
+  server: ppn.murix.de
+  skip-cert-verify: true
+  type: trojan
+- name: "\U0001F1E9\U0001F1EA DE|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  password: ea4ca483-ca8f-f58c-d669-2bfbd79ee962
+  port: 443
+  server: mx.mrvpn.de
+  skip-cert-verify: true
+  type: trojan
+- alterId: 0
+  cipher: auto
+  name: "\U0001F1EB\U0001F1F7 FR|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  network: ws
+  port: 443
+  server: de2-vmess.greenssh.xyz
+  skip-cert-vertify: true
+  tls: true
+  type: vmess
+  uuid: e5be6b53-3645-43df-a403-7b354f312bbd
+  ws-opts:
+    headers:
+      Host: de2-vmess.greenssh.xyz
+    path: /vmess
+- alterId: 0
+  cipher: auto
+  name: "\U0001F1EF\U0001F1F5 JP|(\u80D6\u864ETG\u9891\u9053@gitbig)"
+  network: ws
+  port: 4015
+  server: gm1g.jikenodes.xyz
+  skip-cert-vertify: true
+  tls: false
+  type: vmess
+  uuid: c3340941-6f00-4828-b1d9-3059db1a7652
+  ws-opts:
+    headers:
+      Host: board.jike99.xyz
+    path: /
