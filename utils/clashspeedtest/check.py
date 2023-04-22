@@ -5,6 +5,7 @@ testurl2 = 'https://jable.tv/rss/'
 def check(alive, proxy, apiurl, sema, timeout, testurl):
     try:
         url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl+'&timeout=' + str(timeout)
+        print('url ='+url+'\n')
         #url =apiurl + '/proxies/' + str(proxy['name']) + '/delay?url='+testurl2+'&timeout=' + str(timeout)
         r = requests.get(url, timeout=10)
         response = json.loads(r.text)
